@@ -26,8 +26,8 @@ class RuleInserForm extends FormRequest
         return [
             'user' => 'required|string|max:255',
             'phone' => 'numeric',
-            'email' => 'email',
-            'address' => 'required|alpha_num'
+            'email' => 'required|email',
+            'address' => 'required|string|max:255'
         ];
     }
     public function messages()
@@ -36,9 +36,9 @@ class RuleInserForm extends FormRequest
             'user.required' => 'Vui lòng nhập tên không bao gồm số!',
             'user.string' => 'Vui lòng nhập tên!',
             'phone.numeric' => 'Vui lòng nhập số điện thoại hợp lệ!',
-            'email.email' => 'Vui lòng nhập email hợp lệ!',
-            'address.alpha_num' => 'Địa chỉ chỉ được chứa chữ cái và số, không được có ký tự đặc biệt hoặc khoảng trắng.',
-            'address.required' => 'Vui lòng nhập địa chỉ.'
+            'email.required' => 'Vui lòng nhập email!',
+            'email.email' => 'Vui lòng nhập địa chỉ email hợp lệ!',
+            'address.string' => 'Địa chỉ phải là một chuỗi ký tự hợp lệ!',  
         ];
     }
 }

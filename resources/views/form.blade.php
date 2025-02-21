@@ -54,12 +54,12 @@
             @include ('Blocks.error')
         </div>
         <div class="display-infor">
-            @if(isset($arr))
-                <p>Tên: {{ $arr['user'] }}</p>
-                <p>Số điện thoại: {{ $arr['phone'] }}</p>
-                <p>Email: {{ $arr['email'] }}</p>
-                <p>Địa chỉ: {{ $arr['address'] }}</p>
-            @endif
+            @foreach($users as $user)
+                <p>Tên: {{ $user['user'] }}</p>
+                <p>Số điện thoại: {{ $user['phone'] }}</p>
+                <p>Email: {{ $user['email'] }}</p>
+                <p>Địa chỉ: {{ $user['address'] }}</p>
+            @endforeach
         </div>
     </form>
 </div>

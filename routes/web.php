@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TongController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\APIController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +53,6 @@ Route::resource('blabla', PostController::class);
 //Bài tập 1:
 Route::get('/form', [FormController::class, 'showForm'] );
 Route::post('/form',[FormController::class,'displayInfor']);
+
+
+Route::get('/api',[APIController::class,'getData']);
