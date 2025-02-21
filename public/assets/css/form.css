@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: linear-gradient(45deg, #072f57, #17e26f);
+    padding: 20px 40px;
+    border-radius: 10px;
+    
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-container .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%); 
+    color: white;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 10px 10px 10px 35px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none; 
+    color: white;
+    font-size: 14px;
+}
+
+.input-container textarea {
+    width: 80%;
+    padding: 10px 10px 10px 35px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none; 
+    color: white;
+    font-size: 14px;
+}
+.input-container textarea::placeholder {
+    padding-top: 10px;
+    color: rgba(255, 255, 255, 0.837);
+}
+
+
+.input-container input::placeholder {
+    color:  rgba(255, 255, 255, 0.837);
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    background-color: #072f57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 160px;
+}
+
+button:hover {
+    background-color: #17e26f;
+}
+
+.display-infor {
+    color: aliceblue;
+}
