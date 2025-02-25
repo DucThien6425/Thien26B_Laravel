@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TongController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\APIController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,10 +50,23 @@ Route::resource('blabla', PostController::class);
 // Vào route sử dụng hàm get để lấy dữ liệu từ form và trả về view form.blade.php
 // Vào route sử dụng hàm post để lấy dữ liệu từ form và trả về kết quả tính tổng A và B
 
+// Route::get('/test',function(){
+//     return view('Test');
+// });
 
 //Bài tập 1:
 Route::get('/form', [FormController::class, 'showForm'] );
 Route::post('/form',[FormController::class,'displayInfor']);
 
-
+// Bài 2:
 Route::get('/api',[APIController::class,'getData']);
+
+//Bài 3:
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+				
