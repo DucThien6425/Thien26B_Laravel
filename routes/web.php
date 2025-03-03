@@ -8,6 +8,10 @@ use App\Http\Controllers\TongController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\EShopperController;
+use Illuminate\Support\Facades\Schema;
+use App\Http\Controllers\CreateTableController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +39,7 @@ Route::get('/', function () {
 });
 //Sử dụng View trong Controller
 Route::get('/demo',[WelcomeController::class, 'demo']);
-Route::get('/index',[WelcomeController::class, 'index']);
+// Route::get('/index',[WelcomeController::class, 'index']);
 
 
 Route::get('/thien',[PostController::class, 'index']);
@@ -69,4 +73,25 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
-				
+
+//Bài 4:
+Route::get('/master', [PageController::class, 'getIndex']);
+
+Route::get('/shopper', [EShopperController::class, 'getIndex']);
+
+//Bài 5:
+// tạo bảng trong database bằng route
+Route::get('/database', function () {
+    Schema::create('meow', function ( $table) {
+        $table->increments('id');
+        $table->string('name');
+        $table->integer('price');
+        $table->mediumText('content');
+        $table->boolean('active');
+        $table->timestamps();
+    });
+    echo 'Đã tạo bảng meow';
+});
+
+// tạo bảng trong database bằng controller
+Route::get('/gau', [CreateTableController::class, 'createTable']);

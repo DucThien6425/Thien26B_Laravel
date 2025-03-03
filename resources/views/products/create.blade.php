@@ -9,11 +9,9 @@
 <body>
     <div class="container mt-5">
         <h2 class="mb-4">Thêm sản phẩm</h2>
-
         @if($errors->any())
             <div class="alert alert-danger">{{ $errors->first() }}</div>
         @endif
-
         <form action="{{ route('products.store') }}" method="POST">
             @csrf
             <div class="mb-3">
