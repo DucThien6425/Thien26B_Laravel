@@ -94,4 +94,13 @@ Route::get('/database', function () {
 });
 
 // tạo bảng trong database bằng controller
-Route::get('/gau', [CreateTableController::class, 'createTable']);
+// Route::get('/gau', [CreateTableController::class, 'createTable']);
+Route::get('/create-product', [CreateTableController::class, 'createProduct']);
+Route::get('/create-articles', [CreateTableController::class, 'createArticles']);
+Route::get('/create-bill', [CreateTableController::class, 'createBill']);
+Route::get('/create-bill-detail', [CreateTableController::class, 'createBillDetail']);
+Route::get('/create-category', [CreateTableController::class, 'createCategory']);
+Route::get('/create-comment', [CreateTableController::class, 'createComment']);
+Route::get('/create-customer', [CreateTableController::class, 'createCustomer']);
+Route::get('/create-dummies', [CreateTableController::class, 'createDummies']);
+Route::get('/create-failed-jobs', [CreateTableController::class, 'createFailedJob']);
